@@ -1,19 +1,16 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 import os.path
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import MobileNet
 from tensorflow.keras.applications.mobilenet import preprocess_input
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 # Load pre-trained model
 from tensorflow.keras.models import load_model
 
-model = load_model('SignL.h5')
+model = load_model('./SignL.h5')
 def predict(image):    
     img_array = image.img_to_array(image)
     img_array = np.expand_dims(img_array, axis=0)
